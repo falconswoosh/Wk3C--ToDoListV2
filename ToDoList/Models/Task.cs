@@ -9,12 +9,27 @@ namespace ToDoList.Models
   {
     private string _description;
     private int _id;
-    private static List<Task> _instances = new List<Task> {};
+    // private static List<Task> _instances = new List<Task> {};
 
     public Task(string description, int Id = 0)
     {
       _description = description;
       _id = Id;
+    }
+
+    public override bool Equals(System.Object otherTask)
+    {
+      if (!(otherTask is Task))
+      {
+        return false;
+      }
+      else
+      {
+        Task newTask = (Task) otherTask;
+        bool idEquality = (this.GetId() == newTask.GetId());
+        bool descriptionEquality = (this.GetDescription() == newTask.GetDescription());
+        return (idEquality && descriptionEquality);
+      }
     }
 
     public string GetDescription()
@@ -26,14 +41,40 @@ namespace ToDoList.Models
     {
       _description = newDescription;
     }
+
     public int GetId()
     {
       return _id;
     }
+
     public void SetId(int Id)
     {
       _id = Id;
     }
+
+    public void Save()
+    {
+      MySqlConnection conn = DB.Connection();
+       conn.Open();
+
+       var cmd = conn.CreateCommand() as MySqlCommand;
+       cmd.CommandText = @"INSERT INTO 'tasks' ('description') VALUES (@TaskDescription);";
+
+       MySqlParameter description = new MySqlParameter();
+       description.ParameterName = "@TaskDescription";
+       description.Value = this._description;
+       cmd.Parameters.Add(description);
+
+       cmd.ExecuteNonQuery();
+       _id = (int) cmd.LastInsertedId;  // Notice the slight update to this line of code!
+
+      conn.Close();
+      if (conn != null)
+      {
+          conn.Dispose();
+      }
+    }
+
     public static List<Task> GetAll()
     {
       List<Task> allTasks = new List<Task> {};
@@ -57,10 +98,23 @@ namespace ToDoList.Models
       return allTasks;
     }
 
-    public static void ClearAll()
+    public static void DeleteAll()
     {
-      _instances.Clear();
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM tasks;";
+
+      cmd.ExecuteNonQuery();
+
+       conn.Close();
+       if (conn != null)
+       {
+           conn.Dispose();
+       }
     }
+
     public static Task Find(int searchId)
     {
       return _instances[searchId-1];
