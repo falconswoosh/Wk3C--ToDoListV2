@@ -1,10 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.AspNetCore.Mvc;
+// using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using ProjectC.Controllers;
-using ProjectC.Models;
+// using ToDoList.Controllers;
+// using ToDoList.Models;
 
-namespace ProjectC.Tests
+namespace ToDoList.Tests
 {
     [TestClass]
     public class HomeControllerTest

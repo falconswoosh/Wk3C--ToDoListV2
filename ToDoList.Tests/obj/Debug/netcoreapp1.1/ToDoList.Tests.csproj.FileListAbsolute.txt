@@ -1,0 +1,2 @@
+/Users/Guest/Desktop/ToDoList.solutions/ToDoList.Tests/bin/Debug/netcoreapp1.1/ToDoList.Tests.deps.json
+/Users/Guest/Desktop/ToDoList.solutions/ToDoList.Tests/obj/Debug/netcoreapp1.1/ToDoList.Tests.AssemblyInfo.cs

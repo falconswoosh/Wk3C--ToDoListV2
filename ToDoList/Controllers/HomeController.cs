@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
-using ProjectC.Models;
+using ToDoList.Models;
 
-namespace ProjectC.Controllers
+namespace ToDoList.Controllers
 {
   public class HomeController : Controller
   {

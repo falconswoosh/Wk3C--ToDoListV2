@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
-using ProjectC;
+using ToDoList;
 using System;
 
-namespace ProjectC.Models
+namespace ToDoList.Models
 {
   public class Task
   {
@@ -16,24 +16,24 @@ namespace ProjectC.Models
       _description = description;
       _id = Id;
     }
-
-    public string GetDescription()
-    {
-      return _description;
-    }
-
-    public void SetDescription(string newDescription)
-    {
-      _description = newDescription;
-    }
-    public int GetId()
-    {
-      return _id;
-    }
-    public void SetId(int Id);
-    {
-      _id = Id;
-    }
+    // 
+    // public string GetDescription()
+    // {
+    //   return _description;
+    // }
+    //
+    // public void SetDescription(string newDescription)
+    // {
+    //   _description = newDescription;
+    // }
+    // public int GetId()
+    // {
+    //   return _id;
+    // }
+    // public void SetId(int Id);
+    // {
+    //   _id = Id;
+    // }
     public static List<Task> GetAll()
     {
       List<Task> allTasks = new List<Task> {};

@@ -1,0 +1,4 @@
+/Users/Guest/Desktop/ToDoList.solutions/ToDoList.Tests/bin/Debug/netcoreapp1.1/week3_Csharp.Tests.deps.json
+/Users/Guest/Desktop/ToDoList.solutions/ToDoList.Tests/bin/Debug/netcoreapp1.1/week3_Csharp.Tests.runtimeconfig.json
+/Users/Guest/Desktop/ToDoList.solutions/ToDoList.Tests/bin/Debug/netcoreapp1.1/week3_Csharp.Tests.runtimeconfig.dev.json
+/Users/Guest/Desktop/ToDoList.solutions/ToDoList.Tests/obj/Debug/netcoreapp1.1/week3_Csharp.Tests.AssemblyInfo.cs
