@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using ToDo.Models;
+using ToDoList.Models;
 
 namespace ToDoList.Tests
 {
@@ -11,12 +11,12 @@ namespace ToDoList.Tests
 
     public void Dispose()
     {
-      Task.DeleteAll();
+      Task.ClearAll();
     }
 
     public TaskTests()
     {
-      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=3306;database=todo_test;";
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=todo_test;";
     }
 
     // [TestMethod]
@@ -38,7 +38,7 @@ namespace ToDoList.Tests
     {
       //Arrange, Act
       int result = Task.GetAll().Count;
-
+      Console.WriteLine("result: "+ result);
       //Assert
       Assert.AreEqual(0, result);
     }

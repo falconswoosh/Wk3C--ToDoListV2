@@ -9,31 +9,31 @@ namespace ToDoList.Models
   {
     private string _description;
     private int _id;
-    // private static List<Task> _instances = new List<Task> {};
+    private static List<Task> _instances = new List<Task> {};
 
     public Task(string description, int Id = 0)
     {
       _description = description;
       _id = Id;
     }
-    // 
-    // public string GetDescription()
-    // {
-    //   return _description;
-    // }
-    //
-    // public void SetDescription(string newDescription)
-    // {
-    //   _description = newDescription;
-    // }
-    // public int GetId()
-    // {
-    //   return _id;
-    // }
-    // public void SetId(int Id);
-    // {
-    //   _id = Id;
-    // }
+
+    public string GetDescription()
+    {
+      return _description;
+    }
+
+    public void SetDescription(string newDescription)
+    {
+      _description = newDescription;
+    }
+    public int GetId()
+    {
+      return _id;
+    }
+    public void SetId(int Id)
+    {
+      _id = Id;
+    }
     public static List<Task> GetAll()
     {
       List<Task> allTasks = new List<Task> {};
@@ -57,14 +57,14 @@ namespace ToDoList.Models
       return allTasks;
     }
 
-      // public static void ClearAll()
-      // {
-      //   _instances.Clear();
-      // }
-      // public static Task Find(int searchId)
-      // {
-      //   return _instances[searchId-1];
-      // }
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+    public static Task Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
 
   }
 }
