@@ -31,6 +31,10 @@ namespace ToDoList.Models
         return (idEquality && descriptionEquality);
       }
     }
+    public override int GetHashCode()
+    {
+      return this.GetDescription().GetHashCode();
+    }
 
     public string GetDescription()
     {
@@ -115,10 +119,11 @@ namespace ToDoList.Models
        }
     }
 
-    public static Task Find(int searchId)
-    {
-      return _instances[searchId-1];
-    }
+    public static Task Find(int id)
+     {
+         Task foundTask= new Task("testDescription");
+         return foundTask;
+     }
 
   }
 }
