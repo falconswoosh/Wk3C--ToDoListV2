@@ -1,0 +1,9 @@
+@{Layout = "_Layout";}
+<h1 id="category">Category List</h1>
+<br>
+@{
+  <ul>
+  @foreach (var category in Model)
+  { <li class="listOut"><a href='/categories/@category.GetId()'>@category.GetName()</a></li> }
+  </ul>
+}

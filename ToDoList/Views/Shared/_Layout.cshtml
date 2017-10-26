@@ -3,11 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/master.css">
     <title>WEEK#3 WORK</title>
   </head>
   <body>
-    <h2>WEEK #3 ASSIGNMENTS</h2>
-    @RenderBody
+    <div class="container">
+    @Html.Partial("Header")
+    <h2></h2>
+    @RenderBody()
+    @Html.Partial("Footer")
+    </div>
   </body>
 </html>

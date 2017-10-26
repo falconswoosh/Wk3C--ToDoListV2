@@ -1,0 +1,10 @@
+@{Layout = "_Layout";}
+<br>
+<form action="/tasks" method="post">
+  <label for="taskDescription">Task Name:</label><br>
+  <input type="text" name="taskDescription" id="taskDescription" placeholder="Name of new task"><br>
+  <br>
+  <label for="dueDate">Task Due Date:</label><br>
+  <input type="date" name="dueDate" id="dueDate" placeholder="YYYY-MM-DD"><br>
+  <button id="TaskButton" class = "btn btn warning" type="submit" name="button">Submit</button>
+</form>

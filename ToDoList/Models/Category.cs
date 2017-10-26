@@ -79,7 +79,7 @@ namespace ToDoList.Models
             int taskId = rdr.GetInt32(0);
             string taskDescription = rdr.GetString(1);
             int taskCategoryId = rdr.GetInt32(2);
-            string dueDate = rdr.GetString(3);
+            string dueDate = rdr.GetDateTime(3).ToString();
             Task newTask = new Task(taskDescription, dueDate, taskCategoryId, taskId);
             allCategoryTasks.Add(newTask);
           }

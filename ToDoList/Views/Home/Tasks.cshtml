@@ -1,0 +1,9 @@
+@{Layout = "_Layout";}
+<h1 id="Task">Task List</h1>
+<br>
+<ul>
+  @foreach (var Task in Model)
+  {
+    <li class="listOut"><a href='/categories/@Task.GetId()'>@Task.GetDescription()</a></li>
+  }
+</ul>

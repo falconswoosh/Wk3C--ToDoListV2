@@ -1,0 +1,15 @@
+@{Layout = "_Layout";}
+<br>
+<br>
+
+<h2>@Model.GetName()</h2>
+<br>
+<ul>
+@{
+  foreach (var task in Model.GetTasks())
+  {
+    <li>@task.GetId() : @task.GetDescription() , @task.GetDueDate() </li>
+  }
+}
+</ul>
+<br>
